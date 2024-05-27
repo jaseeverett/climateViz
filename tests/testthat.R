@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(ClimateViz)
+library(climateViz)
 
-test_check("ClimateViz")
+test_check("climateViz")
