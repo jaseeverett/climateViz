@@ -96,6 +96,3 @@ devtools::document() # Rebuild documentation
 devtools::build_readme() # Rebuild Readme file
 
 devtools::build_site() # Rebuild website after any changes
-
-
-
