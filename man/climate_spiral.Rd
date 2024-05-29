@@ -4,11 +4,21 @@
 \alias{climate_spiral}
 \title{Create climate spiral plot}
 \usage{
-climate_spiral(data = NULL, viridis = FALSE, animate = TRUE)
+climate_spiral(data = NULL, by_year = FALSE, animate = FALSE)
 }
 \arguments{
-\item{animate}{}
+\item{data}{Optional data input. If not provided, climate_stripe will use the NASA GISS data.}
+
+\item{by_year}{TRUE/FALSE - Colour the output by Year, or by temperature difference (DEFAULT)}
+
+\item{animate}{TRUE/FALSE - Should the output be animated to an mp4}
+}
+\value{
+A ggplot object
 }
 \description{
 Create climate spiral plot
+}
+\examples{
+gg <- climate_spiral()
 }

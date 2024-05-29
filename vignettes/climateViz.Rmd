@@ -17,3 +17,18 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(climateViz)
 ```
+
+
+```{r stripe}
+climate_stripe()
+```
+
+
+```{r tornado}
+climate_tornado()
+```
+
+
+```{r spiral}
+climate_spiral()
+```

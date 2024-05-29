@@ -1,10 +1,15 @@
 Package: climateViz
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: The goal of climateViz is to quickly and easily visualise the latest climate data
+Version: 0.0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+     person(
+      given = "Jason D.",
+      family = "Everett",
+      role = c("aut", "cre"),
+      email = "JaseEverett@gmail.com",
+      comment = c(ORCID = "0000-0002-6681-8054")
+      )
+Description: `climateViz` is to quickly and easily visualise the latest climate data. By default the package uses the National Aeronautics and Space Administration (NASA) Goddard Institute for Space Studies (GISS) Surface Temperature Analysis (GISTEMP v4) Data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -16,10 +21,14 @@ Suggests:
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Imports: 
-    av,
+    dplyr,
     gganimate,
     ggplot2,
+    glue,
     magrittr,
+    readr,
+    rlang,
     scales,
     tibble,
-    tidyr
+    tidyr,
+    tidyselect

@@ -5,20 +5,22 @@
 #' @return A ggplot
 #' @export
 #'
+#' @importFrom rlang .data
+#'
 #' @examples
 #' gg <- climate_stripe()
 climate_stripe <- function(data = NULL) {
+
   if (is.null(data)) {
     data <- climate_data()
   }
 
-
   gg_dat <- data %>%
-    dplyr::select(year = Year, t_diff = `J-D`) %>%
+    dplyr::select("Year", t_diff = .data$`J-D`) %>%
     tidyr::drop_na()
 
   gg_dat %>%
-    ggplot2::ggplot(ggplot2::aes(x = year, y = 1, fill = t_diff)) +
+    ggplot2::ggplot(ggplot2::aes(x = .data$Year, y = 1, fill = .data$t_diff)) +
     ggplot2::geom_tile(show.legend = FALSE) +
     ggplot2::scale_fill_stepsn(
       colors = c("#08306B", "white", "#67000D"),
@@ -27,7 +29,7 @@ climate_stripe <- function(data = NULL) {
     ) +
     ggplot2::coord_cartesian(expand = FALSE) +
     ggplot2::scale_x_continuous(breaks = seq(1890, 2020, 30)) +
-    ggplot2::labs(title = glue::glue("Global temperature change ({min(gg_dat$year)}-{max(gg_dat$year)})")) +
+    ggplot2::labs(title = glue::glue("Global temperature change ({min(gg_dat$Year)}-{max(gg_dat$Year)})")) +
     ggplot2::theme_void() +
     ggplot2::theme(
       axis.text.x = ggplot2::element_text(

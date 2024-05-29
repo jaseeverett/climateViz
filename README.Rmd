@@ -16,9 +16,15 @@ knitr::opts_chunk$set(
 # climateViz
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Ubuntu](https://github.com/MathMarEcol/climateViz/actions/workflows/Ubuntu.yaml/badge.svg)](https://github.com/MathMarEcol/climateViz/actions/workflows/Ubuntu.yaml)
+[![MacOS](https://github.com/MathMarEcol/climateViz/actions/workflows/MacOS.yaml/badge.svg)](https://github.com/MathMarEcol/climateViz/actions/workflows/MacOS.yaml)
+[![Windows](https://github.com/MathMarEcol/climateViz/actions/workflows/Windows.yaml/badge.svg)](https://github.com/MathMarEcol/climateViz/actions/workflows/Windows.yaml)
+
+
 <!-- badges: end -->
 
-The goal of climateViz is to ...
+The goal of climateViz is to quickly and easily visualise the latest climate data. By default the package uses the National Aeronautics and Space Administration (NASA) Goddard Institute for Space Studies (GISS) Surface Temperature Analysis (GISTEMP v4) Data. This package would not be possible without the incredible work of Pat Schloss and [Riffomonas](https://github.com/riffomonas). 
 
 ## Installation
 
@@ -31,10 +37,21 @@ remotes::install_github("jaseeverett/climateViz")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ```{r example}
 library(climateViz)
-## basic example code
+```
+
+```{r stripe}
+climate_stripe()
+```
+
+
+```{r tornado}
+climate_tornado()
+```
+
+
+```{r spiral}
+climate_spiral()
 ```
 
