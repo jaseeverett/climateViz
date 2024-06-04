@@ -1,6 +1,6 @@
 #' Create climate spiral plot
 #'
-#' @param data Optional data input. If not provided, climate_stripe will use the NASA GISS data.
+#' @param data Optional data input. If not provided, climate_spiral will use the NASA GISS data.
 #' @param by_year TRUE/FALSE - Colour the output by Year, or by temperature difference (DEFAULT)
 #' @param animate TRUE/FALSE - Should the output be animated to an mp4
 #'
@@ -44,9 +44,9 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
 
     clm <- "Year" # Column name
     lims <- c(-1.2, 2.5)
-    grids <- c(0, 1.5, 2)
+    grids <- c(1.5, 2)
     clr <- "red"
-
+    flr <- "black"
     temp_lines <- tibble::tibble(
       x = 1,
       y = grids,
@@ -63,6 +63,7 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
     grids <- c(1, 0, -1)
     lims <- c(-1.2, 1.5)
     clr <- c("yellow", "green", "yellow")
+    flr = NA
 
     temp_lines <- tibble::tibble(
       x = 1,
@@ -106,10 +107,16 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
     ggplot2::geom_hline(
       yintercept = grids,
       color = clr) +
-    ggplot2::geom_text(
+    ggplot2::geom_label(
       data = temp_lines,
-      ggplot2::aes(x = .data$x, y = .data$y, label = .data$labels),
-      color = clr, size = 6, fontface = "bold",
+      ggplot2::aes(x = .data$x,
+                   y = .data$y,
+                   label = .data$labels),
+      color = clr,
+      size = 6,
+      fontface = "bold",
+      fill = flr,
+      label.size = 0,
       inherit.aes = FALSE) +
     ggplot2::geom_text(
       data = month_labels,
@@ -141,78 +148,6 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
         hjust = 0.05
       ),
     )
-
-
-  #
-  # gg <- gg_dat %>%
-  #   ggplot2::ggplot(ggplot2::aes(x = .data$month_number,
-  #                                y = .data$t_diff,
-  #                                group = .data$Year,
-  #                                color = .data$Year)) +
-  #   ggplot2::geom_col(
-  #     data = month_labels,
-  #     ggplot2::aes(x = .data$x + 0.5, y = 2.4), fill = "black",
-  #     width = 1,
-  #     inherit.aes = FALSE
-  #   ) +
-  #   ggplot2::geom_col(
-  #     data = month_labels,
-  #     ggplot2::aes(x = .data$x + 0.5, y = -2), fill = "black",
-  #     width = 1,
-  #     inherit.aes = FALSE
-  #   ) +
-  #   ggplot2::geom_hline(yintercept = c(1, 1.5, 2.0), color = "red") +
-  #   ggplot2::geom_line() +
-  #   ggplot2::geom_point(
-  #     data = annotation,
-  #     ggplot2::aes(x = .data$month_number,
-  #                  y = .data$t_diff,
-  #                  color = .data$Year),
-  #     size = 2,
-  #     inherit.aes = FALSE
-  #   ) +
-  #   ggplot2::geom_label( # Add degree change labels
-  #     data = temp_lines,
-  #     ggplot2::aes(x = .data$x,
-  #                  y = .data$y,
-  #                  label = .data$labels),
-  #     color = "red",
-  #     fill = "black",
-  #     label.size = 0,
-  #     inherit.aes = FALSE
-  #   ) +
-  #   ggplot2::geom_text(
-  #     data = month_labels,
-  #     ggplot2::aes(x = .data$x,
-  #                  y = .data$y,
-  #                  label = .data$labels),
-  #     inherit.aes = FALSE,
-  #     color = "white",
-  #     angle = seq(360 - 360 / 12, 0, length.out = 12)
-  #   ) +
-  #   # ggplot2::geom_text(ggplot2::aes(x = 1, y = -1.3, label = "2022"), size = 6) +
-  #   ggplot2::scale_x_continuous(
-  #     breaks = 1:12,
-  #     labels = month.abb,
-  #     expand = c(0, 0),
-  #     sec.axis = ggplot2::dup_axis(name = NULL, labels = NULL)
-  #   ) +
-  #   ggplot2::scale_y_continuous(
-  #     breaks = seq(-2, 2, 0.2),
-  #     limits = c(-2, 2.7), expand = c(0, -0.7),
-  #     sec.axis = ggplot2::dup_axis(name = NULL, labels = NULL)
-  #   ) +
-  #   ggplot2::scale_color_viridis_c(
-  #     breaks = seq(min(gg_dat$Year), max(gg_dat$Year), 20),
-  #     guide = "none"
-  #   ) +
-  #   ggplot2::coord_polar(start = 2 * pi / 12) +
-  #   ggplot2::labs(
-  #     x = NULL,
-  #     y = NULL,
-  #     title = "Global temperature change (1880-2022)"
-  #   )
-
 
 
 
