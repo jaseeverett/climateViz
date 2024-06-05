@@ -7,7 +7,7 @@
 climate_spiral(data = NULL, by_year = FALSE, animate = FALSE)
 }
 \arguments{
-\item{data}{Optional data input. If not provided, climate_stripe will use the NASA GISS data.}
+\item{data}{Optional data input. If not provided, climate_spiral will use the NASA GISS data.}
 
 \item{by_year}{TRUE/FALSE - Colour the output by Year, or by temperature difference (DEFAULT)}
 

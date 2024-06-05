@@ -21,7 +21,6 @@ knitr::opts_chunk$set(
 [![MacOS](https://github.com/MathMarEcol/climateViz/actions/workflows/MacOS.yaml/badge.svg)](https://github.com/MathMarEcol/climateViz/actions/workflows/MacOS.yaml)
 [![Windows](https://github.com/MathMarEcol/climateViz/actions/workflows/Windows.yaml/badge.svg)](https://github.com/MathMarEcol/climateViz/actions/workflows/Windows.yaml)
 
-
 <!-- badges: end -->
 
 The goal of climateViz is to quickly and easily visualise the latest climate data. By default the package uses the National Aeronautics and Space Administration (NASA) Goddard Institute for Space Studies (GISS) Surface Temperature Analysis (GISTEMP v4) Data. This package would not be possible without the incredible work of Pat Schloss and [Riffomonas](https://github.com/riffomonas). 

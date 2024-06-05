@@ -7,7 +7,7 @@
 climate_tornado(data = NULL)
 }
 \arguments{
-\item{data}{Optional data input. If not provided, climate_stripe will use the NASA GISS data.}
+\item{data}{Optional data input. If not provided, climate_tornado will use the NASA GISS data.}
 }
 \value{
 A ggplot object

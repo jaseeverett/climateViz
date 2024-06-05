@@ -38,26 +38,12 @@ library(climateViz)
 
 ``` r
 climate_stripe()
-#> Rows: 145 Columns: 19
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> dbl (19): Year, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec, ...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 <img src="man/figures/README-stripe-1.png" width="100%" />
 
 ``` r
 climate_tornado()
-#> Rows: 145 Columns: 19
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> dbl (19): Year, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec, ...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> Warning: Removed 1 row containing missing values or values outside the scale range
 #> (`geom_segment()`).
 ```
@@ -66,15 +52,6 @@ climate_tornado()
 
 ``` r
 climate_spiral()
-#> Rows: 145 Columns: 19
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> dbl (19): Year, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec, ...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-#> Warning: Removed 12 rows containing missing values or values outside the scale range
-#> (`geom_text()`).
 ```
 
 <img src="man/figures/README-spiral-1.png" width="100%" />
