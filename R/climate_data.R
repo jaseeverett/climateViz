@@ -8,5 +8,5 @@
 climate_data <- function() {
   fi <- "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
 
-  readr::read_csv(file = fi, skip = 1, na = "***")
+  readr::read_csv(file = fi, skip = 1, na = "***", show_col_types = FALSE)
 }
