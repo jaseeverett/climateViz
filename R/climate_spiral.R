@@ -63,7 +63,7 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
     grids <- c(1, 0, -1)
     lims <- c(-1.2, 1.5)
     clr <- c("yellow", "green", "yellow")
-    flr = NA
+    flr = "black"
 
     temp_lines <- tibble::tibble(
       x = 1,
@@ -113,7 +113,7 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
                    y = .data$y,
                    label = .data$labels),
       color = clr,
-      size = 6,
+      size = 3,
       fontface = "bold",
       fill = flr,
       label.size = 0,
@@ -134,8 +134,7 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
                   x = NULL,
                   y = NULL) +
     ggplot2::theme(
-      panel.background = ggplot2::element_rect(fill = "#444444", size = 1),
-      # panel.background = ggplot2::element_rect(fill = "black", size = 1),
+      panel.background = ggplot2::element_rect(fill = "#444444", linewidth = 1),
       plot.background = ggplot2::element_rect(fill = "#444444", color = "#444444"),
       panel.grid = ggplot2::element_blank(),
       axis.text.x = ggplot2::element_blank(),
@@ -145,7 +144,7 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
       plot.title = ggplot2::element_text(
         color = "white",
         margin = ggplot2::margin(b = 5, t = 10, unit = "pt"),
-        hjust = 0.05
+        hjust = 0.5
       ),
     )
 
@@ -170,13 +169,17 @@ climate_spiral <- function(data = NULL, by_year = FALSE, animate = FALSE) {
     gg <- gg +
       gganimate::transition_manual(frames = .data$Year, cumulative = TRUE)
 
+    gg2 <- gg + gganimate::exit_shrink()
     # animate(a, width=4.155, height=4.5, unit="in", res=300)
     # anim_save("climate_spiral.gif")
 
+    browser()
+
+    gganimate::anim_save("./second_saved_animation.gif", animation = gg2)
 
     gganimate::animate(gg,
                        width = 4.155, height = 4.5, unit = "in", res = 300,
-                       renderer = gganimate::av_renderer("climate_spiral.mp4")
+                       renderer = gganimate::av_renderer("~/GitHub/climateViz/climate_spiral.mp4")
     )
   } else {
     return(gg)

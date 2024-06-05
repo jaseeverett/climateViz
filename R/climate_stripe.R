@@ -28,7 +28,7 @@ climate_stripe <- function(data = NULL) {
       n.breaks = 12
     ) +
     ggplot2::coord_cartesian(expand = FALSE) +
-    ggplot2::scale_x_continuous(breaks = seq(1890, 2020, 30)) +
+    ggplot2::scale_x_continuous(breaks = seq(1890, 2020, 20)) +
     ggplot2::labs(title = glue::glue("Global temperature change ({min(gg_dat$Year)}-{max(gg_dat$Year)})")) +
     ggplot2::theme_void() +
     ggplot2::theme(
