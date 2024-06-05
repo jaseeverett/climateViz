@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param data Optional data input. If not provided, climate_stripe will use the NASA GISS data.
+#' @param data Optional data input. If not provided, climate_tornado will use the NASA GISS data.
 #'
 #' @return A ggplot object
 #' @export
